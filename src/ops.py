@@ -52,7 +52,7 @@ class val:
       
     return out
 
-  def __div__(self, other):
+  def __truediv__(self, other):
     out = val(self.data / other.data, (self, other), '/')
     
     def _backward():
