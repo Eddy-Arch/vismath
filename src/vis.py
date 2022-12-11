@@ -12,8 +12,8 @@ def trace(root):
   build(root)
   return nodes, edges
 
-def draw_dot(root):
-  dot = Digraph(format='svg', graph_attr={'rankdir': 'TB'}) # LR = left to right
+def draw_dot(root, filetype='svg'):
+  dot = Digraph(format=filetype, graph_attr={'rankdir': 'TB'}) # LR = left to right
 
   nodes, edges = trace(root)
   for n in nodes:

@@ -32,16 +32,6 @@ class val:
       
     return out
 
-  def __mul__(self, other):
-    out = val(self.data * other.data, (self, other), '*')
-    
-    def _backward():
-      self.grad += other.data * out.grad
-      other.grad += self.data * out.grad
-    out._backward = _backward
-      
-    return out
-
   def __sub__(self, other):
     out = val(self.data - other.data, (self, other), '-')
     
@@ -58,6 +48,16 @@ class val:
     def _backward():
       self.grad += other.data - out.grad
       other.grad += self.data - out.grad
+    out._backward = _backward
+      
+    return out
+
+  def __pow__(self, other):
+    out = val(self.data ** other.data, (self, other), '**')
+    
+    def _backward():
+      self.grad += other.data ** out.grad
+      other.grad += self.data ** out.grad
     out._backward = _backward
       
     return out

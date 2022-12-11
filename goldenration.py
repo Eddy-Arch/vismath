@@ -7,4 +7,4 @@ while b.data < 100:
     print(b)
     a, b = b, a+b
 
-draw_dot(b).render(filename='img/g1')
+draw_dot(b,'png').render(filename='img/goldenratio')

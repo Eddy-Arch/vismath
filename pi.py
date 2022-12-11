@@ -19,4 +19,4 @@ for i in range(50):
     k += val(2)
 
 print(s)
-draw_dot(s).render(filename='img/g1')
+draw_dot(s).render(filename='img/g1.png')
